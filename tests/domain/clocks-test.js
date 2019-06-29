@@ -52,7 +52,7 @@ describe('Clocks ', function () {
     describe('All clocks', function () {
 
         it('are available', function () {
-            expect(clocks.all()).to.include.members([clocks.tokyo(), clocks.moscow(), clocks.paris(), clocks.london(), clocks.newYork(), clocks.losAngeles(), clocks.saoPaulo()]);
+            expect(clocks.all()).to.deep.equal([clocks.tokyo(), clocks.moscow(), clocks.paris(), clocks.london(), clocks.newYork(), clocks.losAngeles(), clocks.saoPaulo()]);
         });
     })
 });
