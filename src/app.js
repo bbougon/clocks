@@ -1,12 +1,3 @@
-var express = require("express");
-var app = express();
-var Clocks = require('./domain/clocks');
+let Server = require('./infrastructure/server/server');
 
-app.listen(3000, () => {
-    console.log("Server running on port 3000");
-});
-
-app.get("/test", (req, res, next) => {
-    let clocks = new Clocks();
-    res.json(clocks.all());
-});
+new Server(process.env.PORT || 3000).start();

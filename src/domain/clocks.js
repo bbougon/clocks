@@ -4,10 +4,6 @@ let ZoneId = require('js-joda').ZoneId;
 
 function Clocks(clock) {
     this._currentDateTime = ZoneCurrentDateTime.now(clock);
-
-    function currentDateTime(zoneId) {
-
-    }
 }
 
 Clocks.prototype.sameInstant = function (zoneId) {
