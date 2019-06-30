@@ -11,7 +11,7 @@ describe('Clocks ', function () {
     let clocks = null;
 
     beforeEach(function () {
-        clocks = new Clocks(Clock.fixed(Instant.EPOCH, ZoneId.SYSTEM));
+        clocks = new Clocks(Clock.fixed(Instant.EPOCH, ZoneId.of('Z')));
     });
 
     it('in Asia/Tokyo', function () {

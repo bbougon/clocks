@@ -9,7 +9,7 @@ function ZoneCurrentDateTime(date) {
     this._zoneId = this._date.zone().normalized().id();
 }
 
-ZoneCurrentDateTime.now = function (clock = Clock.system(ZoneId.SYSTEM)) {
+ZoneCurrentDateTime.now = function (clock = Clock.system(ZoneId.of('Z'))) {
     return new ZoneCurrentDateTime(ZonedDateTime.now(clock));
 };
 
