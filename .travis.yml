@@ -18,7 +18,7 @@ cache:
 
 script:
   - npm test
-  - npm coverage
+  - npm run coverage
 
 after_success:
   - codecov
