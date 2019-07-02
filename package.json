@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --exit",
+    "test": "nyc --chache=false mocha --exit",
+    "coverage": "nyc report --reporter=text-lcov && codecov",
     "start": "node ./src/app.js"
   },
   "keywords": [],
@@ -20,6 +21,7 @@
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "sinon": "^7.3.2"
   }
 }
