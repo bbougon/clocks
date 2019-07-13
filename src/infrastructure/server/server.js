@@ -1,22 +1,28 @@
 const ClockResource = require('./../../web/resources/clock-resource');
-var express = require("express");
-var cors = require('cors');
+let express = require("express");
+let cors = require('cors');
 
-function Server(port) {
+function Server(port, repositories) {
     this._port = port;
+    this._repositories = repositories;
+    this._server = null;
 }
 
 Server.prototype.start = function () {
     const app = express();
     app.use(cors());
-    app.listen(this._port, () => {
+    this._server = app.listen(this._port, () => {
         console.log('{Server running on port ' + this._port + '}');
     });
-    let loadResources = function () {
-        new ClockResource().load(app);
+    let loadResources = function (repositories) {
+        new ClockResource(repositories).load(app);
     };
-    loadResources();
+    loadResources(this._repositories);
     return app;
+};
+
+Server.prototype.close = function () {
+    this._server.close();
 };
 
 module.exports = Server;

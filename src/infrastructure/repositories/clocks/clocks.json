@@ -1,0 +1,14 @@
+[
+  {"zone": "Asia/Tokyo"},
+  {"zone": "Asia/Shanghai"},
+  {"zone": "Asia/Kuala_Lumpur"},
+  {"zone": "Asia/Manila"},
+  {"zone": "Europe/Moscow"},
+  {"zone": "Europe/Istanbul"},
+  {"zone": "Europe/Berlin"},
+  {"zone": "Europe/Paris"},
+  {"zone": "Europe/London"},
+  {"zone": "America/New_York"},
+  {"zone": "America/Los_Angeles"},
+  {"zone": "America/Sao_Paulo"}
+]

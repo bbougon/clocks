@@ -1,13 +1,14 @@
-const Clocks = require('./../../domain/clocks');
-
 class ClockResource {
+    _repositories;
 
-    constructor() {
+    constructor(repositories) {
+        this._repositories = repositories;
     }
 
     load(app) {
-        app.get("/clocks", (req, res, next) => {
-            res.json(new Clocks().all());
+        app.get("/clocks", (req, res) => {
+            this._repositories.clocks().getAll()
+                .then(clocks => res.json(clocks));
         });
     }
 }
