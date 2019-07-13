@@ -1,5 +1,4 @@
 class ClockResource {
-    _repositories;
 
     constructor(repositories) {
         this._repositories = repositories;
