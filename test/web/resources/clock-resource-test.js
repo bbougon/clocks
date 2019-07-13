@@ -22,7 +22,7 @@ describe('Clock resource', function () {
         memoryRepositories.clocks().add(clocks.sameInstant(ZoneId.of('Europe/Moscow')));
         memoryRepositories.clocks().add(clocks.sameInstant(ZoneId.of('Europe/Paris')));
         memoryRepositories.clocks().add(clocks.sameInstant(ZoneId.of('Europe/London')));
-        server = new Server(1000, memoryRepositories);
+        server = new Server(10000, memoryRepositories);
         app = server.start();
         chai.use(chaiHttp);
     });
